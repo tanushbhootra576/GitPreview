@@ -1,4 +1,4 @@
-# 🚀 GitPreview
+# GitPreview
 
 A beautiful, modern web application for exploring GitHub profiles, repositories, and user statistics with an elegant user interface and smooth animations.
 
@@ -6,20 +6,20 @@ A beautiful, modern web application for exploring GitHub profiles, repositories,
 ![Vite](https://img.shields.io/badge/Vite-5+-yellow.svg)
 ![Responsive](https://img.shields.io/badge/Mobile-Responsive-green.svg)
 
-## ✨ Features
+##  Features
 
-### 🔍 **Search & Discovery**
+###  **Search & Discovery**
 - Real-time GitHub user search with autocomplete suggestions
 - Intelligent search results with user avatars and types
 - Responsive search interface with beautiful glassmorphism effects
 
-### 👤 **User Profiles**
+###  **User Profiles**
 - Comprehensive user profile display with avatar, bio, and social links
 - Interactive statistics cards showing followers, following, and repositories
 - Beautiful gradient backgrounds and modern card designs
 - Sticky profile sidebar for easy navigation
 
-### 📚 **Repository Exploration**
+###  **Repository Exploration**
 - Complete repository listing with sorting and filtering options
 - Language-based filtering with color-coded indicators
 - Repository cards with stars, forks, watchers, and last updated information
@@ -32,14 +32,14 @@ A beautiful, modern web application for exploring GitHub profiles, repositories,
 - Repository metadata including creation date, size, and default branch
 - Direct links to repository and project websites
 
-### 🎨 **Modern Design**
+###  **Modern Design**
 - Beautiful gradient backgrounds and glassmorphism effects
 - Responsive design that works perfectly on all device sizes
 - Smooth animations and hover effects using Framer Motion
 - Professional color scheme with CSS custom properties
 - Accessible focus states and keyboard navigation
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **React 19** - Latest React with modern hooks and features
 - **Vite** - Lightning-fast build tool and development server
@@ -49,7 +49,7 @@ A beautiful, modern web application for exploring GitHub profiles, repositories,
 - **Heroicons & Lucide React** - Beautiful, consistent icon sets
 - **Modern CSS** - Advanced styling with gradients, backdrop filters, and custom properties
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js (version 16 or higher)
@@ -80,7 +80,7 @@ A beautiful, modern web application for exploring GitHub profiles, repositories,
 4. **Open your browser**
    Navigate to `http://localhost:5173` to see the application running.
 
-## 🏗️ Build for Production
+##  Build for Production
 
 ```bash
 npm run build
@@ -90,7 +90,7 @@ yarn build
 
 The optimized production build will be created in the `dist` folder.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 src/
@@ -117,7 +117,7 @@ src/
 └── index.css          # Global styles
 ```
 
-## 🎯 Key Features Explained
+##  Key Features Explained
 
 ### Search Functionality
 The search feature provides real-time suggestions as you type, with debounced API calls to prevent excessive requests. Search results show user avatars, usernames, and account types.
@@ -143,7 +143,7 @@ Detailed repository views include:
 - Repository metadata and external links
 - Responsive design for all screen sizes
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
 The application follows modern web design principles:
 
@@ -154,32 +154,27 @@ The application follows modern web design principles:
 - **Color System**: Consistent color palette using CSS custom properties
 - **Responsive First**: Mobile-friendly design that scales beautifully
 
-## 🌐 Browser Support
+## Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - GitHub API for providing comprehensive user and repository data
 - React team for the amazing framework
 - Vite team for the blazing-fast build tool
 - All the open-source libraries that made this project possible
 
-## 📞 Contact
 
-If you have any questions or suggestions, feel free to open an issue or contact the project maintainer.
 
 ---
 
-**Built with ❤️ using React and modern web technologies**
+**Developed by Tanush Bhootra**
