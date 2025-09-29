@@ -1,0 +1,196 @@
+/* Enhanced color system for GitPreview */
+:root {
+    /* Base Colors */
+    --color-bg-default: #101218;
+    --color-bg-default-rgb: 16, 18, 24;
+    --color-bg-subtle: #1a1e27;
+    --color-bg-subtle-rgb: 26, 30, 39;
+    --color-bg-elevated: #242936;
+    --color-bg-elevated-rgb: 36, 41, 54;
+    --color-bg-hover: #2a3040;
+    --color-bg-hover-rgb: 42, 48, 64;
+
+    /* Border Colors */
+    --color-border-default: #2d334a;
+    --color-border-rgb: 45, 51, 74;
+    --color-border-strong: #3a4157;
+
+    /* Accent Colors */
+    --color-accent-fg: #4fd1c5;
+    --color-accent-rgb: 79, 209, 197;
+    --color-accent-emphasis: #ffb347;
+    --color-accent-emphasis-rgb: 255, 179, 71;
+    --color-done-fg: #ff6a00;
+    --color-done-rgb: 255, 106, 0;
+    --color-success-fg: #10b981;
+    --color-success-rgb: 16, 185, 129;
+    --color-danger-fg: #ef4444;
+    --color-danger-rgb: 239, 68, 68;
+    --color-warning-fg: #f59e0b;
+    --color-warning-rgb: 245, 158, 11;
+
+    /* Programming Language Colors */
+    --color-lang-javascript: #f7df1e;
+    --color-lang-typescript: #3178c6;
+    --color-lang-python: #3572A5;
+    --color-lang-java: #b07219;
+    --color-lang-csharp: #178600;
+    --color-lang-cpp: #f34b7d;
+    --color-lang-go: #00ADD8;
+    --color-lang-ruby: #701516;
+    --color-lang-php: #4F5D95;
+    --color-lang-swift: #F05138;
+    --color-lang-kotlin: #A97BFF;
+    --color-lang-rust: #DEA584;
+    --color-lang-html: #e34c26;
+    --color-lang-css: #563d7c;
+    --color-lang-shell: #89e051;
+
+    /* Text Colors */
+    --color-text-primary: #f5f6fa;
+    --color-text-primary-rgb: 245, 246, 250;
+    --color-text-secondary: #b8c1d9;
+    --color-text-secondary-rgb: 184, 193, 217;
+    --color-text-tertiary: #7a849c;
+    --color-text-tertiary-rgb: 122, 132, 156;
+
+    /* Card and UI Elements */
+    --color-card-bg: #1a1e27;
+    --color-card-bg-rgb: 26, 30, 39;
+    --color-card-hover: #242936;
+    --color-card-hover-rgb: 36, 41, 54;
+    --ui-card-bg: rgba(26, 30, 39, 0.8);
+    --ui-card-border: #2d334a;
+    --ui-muted: rgba(26, 30, 39, 0.6);
+
+    /* Shadows */
+    --shadow-xsmall: 0 1px 2px rgba(0, 0, 0, 0.12);
+    --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 0 4px 24px rgba(0, 0, 0, 0.22);
+    --shadow-large: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* Border Radius */
+    --border-radius-small: 8px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 16px;
+    --border-radius-xlarge: 24px;
+    --border-radius-circle: 50%;
+
+    /* Glass Effects */
+    --blur-subtle: blur(6px);
+    --blur-medium: blur(10px);
+    --blur-strong: blur(18px);
+
+    /* Animation Speeds */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+
+    /* Z-index Layers */
+    --z-index-base: 1;
+    --z-index-above: 10;
+    --z-index-dropdown: 100;
+    --z-index-sticky: 200;
+    --z-index-fixed: 300;
+    --z-index-modal: 400;
+    --z-index-popover: 500;
+    --z-index-toast: 600;
+    --z-index-overlay: 700;
+}
+
+/* Dark Mode Override - Can be used for future light/dark theme toggle */
+.dark-mode {
+    --color-bg-default: #101218;
+    --color-bg-default-rgb: 16, 18, 24;
+    --color-bg-subtle: #1a1e27;
+    --color-bg-subtle-rgb: 26, 30, 39;
+    --color-text-primary: #f5f6fa;
+    --color-text-secondary: #b8c1d9;
+    --color-text-tertiary: #7a849c;
+    --ui-card-border: #2d334a;
+}
+
+/* Light Mode Override - For future implementation */
+.light-mode {
+    --color-bg-default: #f5f6fa;
+    --color-bg-default-rgb: 245, 246, 250;
+    --color-bg-subtle: #e5e7eb;
+    --color-bg-subtle-rgb: 229, 231, 235;
+    --color-text-primary: #111827;
+    --color-text-secondary: #4b5563;
+    --color-text-tertiary: #6b7280;
+    --ui-card-border: #d1d5db;
+
+    /* Language Colors */
+    --lang-javascript: #f1e05a;
+    --lang-typescript: #3178c6;
+    --lang-python: #3572A5;
+    --lang-java: #b07219;
+    --lang-go: #00ADD8;
+    --lang-rust: #dea584;
+    --lang-c: #555555;
+    --lang-cpp: #f34b7d;
+    --lang-csharp: #178600;
+    --lang-ruby: #701516;
+    --lang-php: #4F5D95;
+    --lang-html: #e34c26;
+    --lang-css: #563d7c;
+    --lang-shell: #89e051;
+}
+
+/* Language color mapping */
+.language-color[data-language="javascript"] {
+    background-color: var(--lang-javascript);
+}
+
+.language-color[data-language="typescript"] {
+    background-color: var(--lang-typescript);
+}
+
+.language-color[data-language="python"] {
+    background-color: var(--lang-python);
+}
+
+.language-color[data-language="java"] {
+    background-color: var(--lang-java);
+}
+
+.language-color[data-language="go"] {
+    background-color: var(--lang-go);
+}
+
+.language-color[data-language="rust"] {
+    background-color: var(--lang-rust);
+}
+
+.language-color[data-language="c"] {
+    background-color: var(--lang-c);
+}
+
+.language-color[data-language="c++"] {
+    background-color: var(--lang-cpp);
+}
+
+.language-color[data-language="c#"] {
+    background-color: var(--lang-csharp);
+}
+
+.language-color[data-language="ruby"] {
+    background-color: var(--lang-ruby);
+}
+
+.language-color[data-language="php"] {
+    background-color: var(--lang-php);
+}
+
+.language-color[data-language="html"] {
+    background-color: var(--lang-html);
+}
+
+.language-color[data-language="css"] {
+    background-color: var(--lang-css);
+}
+
+.language-color[data-language="shell"] {
+    background-color: var(--lang-shell);
+}

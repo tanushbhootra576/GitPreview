@@ -1,0 +1,51 @@
+/* AI Review styles */
+
+.review-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    min-height: 200px;
+}
+
+.review-error {
+    background: rgba(255, 59, 48, 0.1);
+    border: 1px solid rgba(255, 59, 48, 0.3);
+    border-radius: var(--border-radius-medium);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+.review-error-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #ff3b30;
+    margin-bottom: 0.5rem;
+}
+
+.review-error h3 {
+    color: var(--color-text-danger);
+    margin: 0;
+    font-weight: 600;
+}
+
+.review-error p {
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.review-error-tip {
+    font-size: 0.9rem;
+    background: rgba(var(--color-accent-rgb), 0.1);
+    border-radius: var(--border-radius-small);
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem !important;
+    border: 1px solid rgba(var(--color-accent-rgb), 0.2);
+}

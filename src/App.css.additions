@@ -1,0 +1,34 @@
+/* App Layout with Navbar */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-default);
+}
+
+.app-content {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+/* Ensure proper padding in various routes */
+.home-container,
+.profile-container,
+.repository-details {
+  padding-top: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Navbar logo update */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Add GitHub icon to the logo */
+.nav-logo-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

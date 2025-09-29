@@ -1,0 +1,107 @@
+/* Mobile-specific adjustments for GitPreview */
+
+/* Common mobile styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.75rem;
+    }
+
+    /* Improved spacing for mobile */
+    .profile-container,
+    .repositories-container,
+    .repository-details {
+        padding: 1rem 0.75rem;
+    }
+
+    /* Fix navbar on mobile */
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Ensure proper z-index for UI elements */
+    .profile-bg {
+        z-index: 0;
+    }
+
+    .repositories-container {
+        z-index: 1;
+        position: relative;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    /* More compact spacing for small screens */
+    .profile-container,
+    .repositories-container,
+    .repository-details {
+        padding: 0.75rem 0.5rem;
+    }
+
+    /* Profile adjustments */
+    .cool-profile-content {
+        padding: 1.25rem 1rem 1rem;
+    }
+
+    .cool-profile-name {
+        font-size: 1.5rem;
+    }
+
+    .cool-profile-username {
+        font-size: 1rem;
+    }
+
+    /* Navbar adjustments */
+    .navbar-search input {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Single column layout for any multi-column content */
+    .multi-column-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Fix for any fixed or sticky elements to ensure they don't cause overflow */
+.fixed-element,
+.sticky-element {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+/* Ensure buttons and interactive elements are easier to tap on mobile */
+@media (max-width: 768px) {
+
+    button,
+    .interactive-element,
+    .nav-link,
+    .repo-controls button {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Add more space between interactive elements */
+    .button-group {
+        gap: 0.75rem;
+    }
+}
+
+/* Fix any overflow issues */
+body,
+html {
+    overflow-x: hidden;
+}
+
+.overflow-container {
+    overflow-x: hidden;
+    width: 100%;
+}
