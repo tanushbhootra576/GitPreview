@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Bars3Icon, XMarkIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useGitHubSearch } from "../hooks/useGitHub";
+import RateLimitWarning from "./RateLimitWarning";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -9,11 +10,11 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [query, setQuery] = useState("");
     const searchInputRef = useRef(null);
-    const { results, searchUsers } = useGitHubSearch();
+    const { results, searchUsers, error, clearError } = useGitHubSearch();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    // Handle search input change
+    // Handle search input change with debouncing
     const handleSearchChange = (e) => {
         const value = e.target.value;
         setQuery(value);
@@ -22,10 +23,15 @@ const Navbar = () => {
             return;
         }
 
-        // Debounce search query
+        // Only search if the query is at least 2 characters long
+        if (value.trim().length < 2) {
+            return;
+        }
+
+        // Debounce search query to reduce API calls
         const timeoutId = setTimeout(() => {
             searchUsers(value);
-        }, 300);
+        }, 500); // Increased debounce time to 500ms
 
         return () => clearTimeout(timeoutId);
     };
@@ -39,8 +45,15 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar">
-            <div className="nav-container">
+        <>
+            {error && (
+                <RateLimitWarning 
+                    error={error} 
+                    onDismiss={clearError}
+                />
+            )}
+            <nav className="navbar">
+                <div className="nav-container">
                 {/* Logo */}
                 <Link to="/" className="nav-logo">
                     <svg className="nav-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
@@ -139,7 +152,8 @@ const Navbar = () => {
                     <Link to="/contact" onClick={toggleMenu}>Contact</Link>
                 </div>
             )}
-        </nav>
+            </nav>
+        </>
     );
 };
 

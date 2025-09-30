@@ -74,20 +74,38 @@ export const useGitHubSearch = () => {
             return;
         }
 
+        // If query looks like a username (no spaces, reasonable length), 
+        // also try direct user lookup as fallback
+        const isLikelyUsername = /^[a-zA-Z0-9-_]+$/.test(query) && query.length <= 39;
+
         setLoading(true);
         setError(null);
         try {
             const searchData = await GitHubService.searchUsers(query);
             setResults(searchData.items || []);
         } catch (err) {
-            setError(err.message);
-            setResults([]);
+            // If search fails due to rate limit and query looks like username, try direct lookup
+            if (err.message.includes('rate limit') && isLikelyUsername) {
+                try {
+                    const user = await GitHubService.getUser(query);
+                    setResults([user]);
+                    setError(null);
+                } catch {
+                    setError(err.message); // Keep original rate limit error
+                    setResults([]);
+                }
+            } else {
+                setError(err.message);
+                setResults([]);
+            }
         } finally {
             setLoading(false);
         }
     };
 
-    return { results, loading, error, searchUsers };
+    const clearError = () => setError(null);
+
+    return { results, loading, error, searchUsers, clearError };
 };
 
 export const useGitHubRepository = (owner, repo) => {

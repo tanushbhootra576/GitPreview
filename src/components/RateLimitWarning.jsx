@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import { ExclamationTriangleIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
+import '../styles/rateLimitWarning.css';
 
 const RateLimitWarning = ({ error, onDismiss }) => {
     const isRateLimit = error?.includes('rate limit');
@@ -7,12 +7,7 @@ const RateLimitWarning = ({ error, onDismiss }) => {
     if (!isRateLimit) return null;
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="rate-limit-warning"
-        >
+        <div className="rate-limit-warning">
             <div className="warning-content">
                 <div className="warning-header">
                     <ExclamationTriangleIcon className="warning-icon" />
@@ -57,7 +52,7 @@ const RateLimitWarning = ({ error, onDismiss }) => {
                     </ol>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
